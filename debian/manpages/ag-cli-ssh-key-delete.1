@@ -1,0 +1,34 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-SSH\-KEY\-DELETE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-ssh\-key\-delete \- Delete an SSH key from your AtomGit account
+.SH SYNOPSIS
+.nf
+\&ag\-cli ssh\-key delete <id> [flags]
+.fi
+.SH DESCRIPTION
+\&Delete an SSH key from your AtomGit account.
+.PP
+\&The target key is retrieved before deletion. By default, you will be prompted
+\&to confirm the deletion. Use \-\-yes to skip the confirmation prompt.
+.SH OPTIONS
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation prompt
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli ssh\-key delete 123
+\&  ag\-cli ssh\-key delete 123 \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-ssh\-key\fR(1)

@@ -1,0 +1,30 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-KANBAN\-VIEW" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-kanban\-view \- View a Kanban board
+.SH SYNOPSIS
+.nf
+\&ag\-cli kanban view <owner> <kanban\-id> [flags]
+.fi
+.SH DESCRIPTION
+\&View a Kanban board
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output the Kanban board as JSON
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli kanban view hust\-open\-atom\-club 1234567890 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-kanban\fR(1)

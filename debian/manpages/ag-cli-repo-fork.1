@@ -1,0 +1,50 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-FORK" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-fork \- Fork a repository
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo fork [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Fork a repository on AtomGit.
+.PP
+\&Creates a fork of the specified repository under your account or an organization.
+.PP
+\&By default, the fork will have the same visibility as the original repository.
+\&Use \-\-private or \-\-public to override.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-c, \-\-clone\fR
+\&Clone the forked repository
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-d, \-\-description <string>\fR
+\&Description for the forked repository
+\&Default: \(dq\(dq.
+.TP
+\fB\-n, \-\-name <string>\fR
+\&Name for the forked repository
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-private\fR
+\&Make the forked repository private
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-public\fR
+\&Make the forked repository public
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1),
+\fBag\-cli\-repo\-fork\-list\fR(1)

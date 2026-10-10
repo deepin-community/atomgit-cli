@@ -1,0 +1,41 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-WORKFLOW\-VALIDATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-workflow\-validate \- Validate a local workflow YAML file
+.SH SYNOPSIS
+.nf
+\&ag\-cli workflow validate [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Validate a local AtomGit Actions workflow file against the documented v8 endpoint.
+.PP
+\&The file is not modified. HTTP 200 with valid=false is treated as a command
+\&error so CI can fail on invalid YAML.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-file <string>\fR
+\&Path to a local workflow YAML file
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-json\fR
+\&Output the validation response as JSON
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli workflow validate \-\-file .gitcode/workflows/ci.yml
+\&  ag\-cli workflow validate owner/repo \-\-file workflow.yml
+\&  ag\-cli workflow validate owner/repo \-\-file workflow.yml \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-workflow\fR(1)

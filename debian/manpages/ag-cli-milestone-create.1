@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-MILESTONE\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-milestone\-create \- Create a repository milestone
+.SH SYNOPSIS
+.nf
+\&ag\-cli milestone create [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Create a repository milestone
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-d, \-\-description <string>\fR
+\&Milestone description
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-due\-on <string>\fR
+\&Due date in YYYY\-MM\-DD format
+\&Default: \(dq\(dq.
+.TP
+\fB\-t, \-\-title <string>\fR
+\&Milestone title
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-milestone\fR(1)

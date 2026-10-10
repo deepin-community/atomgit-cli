@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue \- Manage issues
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue [flags]
+.fi
+.SH DESCRIPTION
+\&Create, view, and manage issues.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\fR(1),
+\fBag\-cli\-issue\-activity\fR(1),
+\fBag\-cli\-issue\-branches\fR(1),
+\fBag\-cli\-issue\-close\fR(1),
+\fBag\-cli\-issue\-comment\fR(1),
+\fBag\-cli\-issue\-create\fR(1),
+\fBag\-cli\-issue\-edit\fR(1),
+\fBag\-cli\-issue\-history\fR(1),
+\fBag\-cli\-issue\-label\fR(1),
+\fBag\-cli\-issue\-list\fR(1),
+\fBag\-cli\-issue\-prs\fR(1),
+\fBag\-cli\-issue\-reactions\fR(1),
+\fBag\-cli\-issue\-reopen\fR(1),
+\fBag\-cli\-issue\-view\fR(1)

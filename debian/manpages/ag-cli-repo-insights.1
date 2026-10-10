@@ -1,0 +1,29 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-INSIGHTS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-insights \- Inspect repository activity and statistics
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo insights [flags]
+.fi
+.SH DESCRIPTION
+\&Inspect read\-only repository languages, contributor statistics, events, watchers, stargazers, and download statistics.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1),
+\fBag\-cli\-repo\-insights\-contributors\fR(1),
+\fBag\-cli\-repo\-insights\-downloads\fR(1),
+\fBag\-cli\-repo\-insights\-events\fR(1),
+\fBag\-cli\-repo\-insights\-languages\fR(1),
+\fBag\-cli\-repo\-insights\-stargazers\fR(1),
+\fBag\-cli\-repo\-insights\-watchers\fR(1)

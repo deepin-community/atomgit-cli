@@ -1,0 +1,43 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-WORKFLOW\-RUN" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-workflow\-run \- Run a workflow
+.SH SYNOPSIS
+.nf
+\&ag\-cli workflow run [<owner>/<repo>] <workflow_id> [flags]
+.fi
+.SH DESCRIPTION
+\&Manually trigger an AtomGit Actions workflow run (workflow_dispatch).
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH ALIASES
+\&dispatch
+.SH OPTIONS
+.TP
+\fB\-F, \-\-field <stringArray>\fR
+\&Add a string parameter in key=value format
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-f, \-\-raw\-field <stringArray>\fR
+\&Add a string parameter in key=value format
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-r, \-\-ref <string>\fR
+\&The git reference (branch or tag) to run the workflow on
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli workflow run owner/repo 12345 \-\-ref main
+\&  ag\-cli workflow run owner/repo ci.yml \-\-ref feature\-branch \-f env=prod \-f debug=true
+.fi
+.SH SEE ALSO
+\fBag\-cli\-workflow\fR(1)

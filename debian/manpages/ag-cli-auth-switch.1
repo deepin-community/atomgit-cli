@@ -1,0 +1,38 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-AUTH\-SWITCH" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-auth\-switch \- Switch the active account and synchronize Git identity
+.SH SYNOPSIS
+.nf
+\&ag\-cli auth switch <account> [flags]
+.fi
+.SH DESCRIPTION
+\&Switch the active account and synchronize Git identity
+.SH OPTIONS
+.TP
+\fB\-\-git\-email <string>\fR
+\&Override Git user.email for this switch
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-git\-name <string>\fR
+\&Override Git user.name for this switch
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-global\fR
+\&Update global Git identity instead of the current repository
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-no\-git\fR
+\&Do not update Git identity
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-auth\fR(1)

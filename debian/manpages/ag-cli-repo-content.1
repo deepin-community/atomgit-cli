@@ -1,0 +1,25 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-CONTENT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-content \- Browse repository contents
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo content [flags]
+.fi
+.SH DESCRIPTION
+\&List directories and view files without modifying repository contents.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1),
+\fBag\-cli\-repo\-content\-list\fR(1),
+\fBag\-cli\-repo\-content\-view\fR(1)

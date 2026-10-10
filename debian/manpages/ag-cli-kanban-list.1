@@ -1,0 +1,35 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-KANBAN\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-kanban\-list \- List organization Kanban boards
+.SH SYNOPSIS
+.nf
+\&ag\-cli kanban list <owner> [flags]
+.fi
+.SH DESCRIPTION
+\&List organization Kanban boards
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output Kanban boards as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of Kanban boards to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli kanban list hust\-open\-atom\-club
+\&  ag\-cli kanban list hust\-open\-atom\-club \-\-limit 50 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-kanban\fR(1)

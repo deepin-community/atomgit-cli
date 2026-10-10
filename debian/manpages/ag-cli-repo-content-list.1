@@ -1,0 +1,39 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-CONTENT\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-content\-list \- List a repository directory
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo content list [<owner>/<repo>] [<path>] [flags]
+.fi
+.SH DESCRIPTION
+\&List a repository directory without modifying it. With no arguments, the repository is inferred and its root is listed. A single argument is a path in the inferred repository; use OWNER/REPO . to list the root of an explicit repository.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output the complete API directory array as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-ref <string>\fR
+\&Branch, tag, or commit identifier
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli repo content list
+\&  ag\-cli repo content list docs
+\&  ag\-cli repo content list owner/repo .
+\&  ag\-cli repo content list owner/repo docs/guides \-\-ref v1.0.0 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\-content\fR(1)

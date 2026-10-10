@@ -1,0 +1,51 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-MERGE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-merge \- Merge a pull request
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr merge [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&Merge a pull request.
+.PP
+\&By default, ag\-cli creates a merge commit. Use \-\-rebase to rebase the commits onto the base branch.
+.PP
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-admin\fR
+\&Use administrator privileges to merge a pull request that does not meet requirements
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-b, \-\-body <string>\fR
+\&Body text for the merge commit
+\&Default: \(dq\(dq.
+.TP
+\fB\-d, \-\-delete\-branch\fR
+\&Delete the source branch after merge
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-r, \-\-rebase\fR
+\&Rebase the commits onto the base branch
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-s, \-\-squash\fR
+\&Squash the commits into one commit
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-t, \-\-subject <string>\fR
+\&Subject text for the merge commit
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

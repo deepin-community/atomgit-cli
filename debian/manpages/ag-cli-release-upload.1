@@ -1,0 +1,47 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RELEASE\-UPLOAD" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-release\-upload \- Upload an attachment to a release
+.SH SYNOPSIS
+.nf
+\&ag\-cli release upload [<owner>/<repo>] <tag> <file> [flags]
+.fi
+.SH DESCRIPTION
+\&Upload a local file as an attachment to an existing release identified by its tag.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-n, \-\-name <string>\fR
+\&Remote attachment name (defaults to the local file's base name)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-overwrite\fR
+\&Delete an existing attachment with the same name before uploading
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-skip\-existing\fR
+\&Do nothing and report success if an attachment with the same name already exists
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-timeout <duration>\fR
+\&Maximum attachment transfer time (0 disables the limit)
+\&Default: \(dq30m0s\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli release upload owner/repo v1.0.0 ./dist/app.tar.gz
+\&  ag\-cli release upload owner/repo v1.0.0 ./build/app.zip \-\-name app\-v1.zip
+\&  ag\-cli release upload owner/repo v1.0.0 ./new.tar.gz \-\-overwrite
+\&  ag\-cli release upload owner/repo v1.0.0 ./existing.tar.gz \-\-skip\-existing
+.fi
+.SH SEE ALSO
+\fBag\-cli\-release\fR(1)

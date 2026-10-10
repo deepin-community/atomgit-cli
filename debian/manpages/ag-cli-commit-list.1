@@ -1,0 +1,48 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-COMMIT\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-commit\-list \- List commits
+.SH SYNOPSIS
+.nf
+\&ag\-cli commit list [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List commits
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output commits as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of commits to list
+\&Default: \(dq30\(dq.
+.TP
+\fB\-\-path <string>\fR
+\&Only list commits that touch the given file path
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-ref <string>\fR
+\&Commit SHA or branch name to start from
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-since <string>\fR
+\&Only list commits after this time (RFC 3339, e.g. 2024\-11\-08T16:25:44Z)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-until <string>\fR
+\&Only list commits before this time (RFC 3339, e.g. 2024\-11\-08T16:25:44Z)
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-commit\fR(1)

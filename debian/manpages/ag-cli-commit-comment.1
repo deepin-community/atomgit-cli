@@ -1,0 +1,28 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-COMMIT\-COMMENT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-commit\-comment \- Manage commit comments
+.SH SYNOPSIS
+.nf
+\&ag\-cli commit comment [flags]
+.fi
+.SH DESCRIPTION
+\&List, view, create, edit, and delete comments on repository commits.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-commit\fR(1),
+\fBag\-cli\-commit\-comment\-create\fR(1),
+\fBag\-cli\-commit\-comment\-delete\fR(1),
+\fBag\-cli\-commit\-comment\-edit\fR(1),
+\fBag\-cli\-commit\-comment\-list\fR(1),
+\fBag\-cli\-commit\-comment\-view\fR(1)

@@ -1,0 +1,28 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-COMMENT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-comment \- Manage pull request comments
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr comment [flags]
+.fi
+.SH DESCRIPTION
+\&Create, view, edit, delete, and reply to pull request comments.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1),
+\fBag\-cli\-pr\-comment\-create\fR(1),
+\fBag\-cli\-pr\-comment\-delete\fR(1),
+\fBag\-cli\-pr\-comment\-edit\fR(1),
+\fBag\-cli\-pr\-comment\-reply\fR(1),
+\fBag\-cli\-pr\-comment\-view\fR(1)

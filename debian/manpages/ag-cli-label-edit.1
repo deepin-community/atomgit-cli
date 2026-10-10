@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-LABEL\-EDIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-label\-edit \- Edit a repository label
+.SH SYNOPSIS
+.nf
+\&ag\-cli label edit [<owner>/<repo>] <name> [flags]
+.fi
+.SH DESCRIPTION
+\&Edit a repository label. AtomGit API v5 accepts a new name and color for label updates.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-color <string>\fR
+\&New label color in #RGB or #RRGGBB format
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-name <string>\fR
+\&New label name
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli label edit owner/repo bug \-\-name defect \-\-color \(dq#d73a4a\(dq
+.fi
+.SH SEE ALSO
+\fBag\-cli\-label\fR(1)

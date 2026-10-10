@@ -1,0 +1,32 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ORG\-RUNNER\-GROUP" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-org\-runner\-group \- Inspect organization Actions runner groups
+.SH SYNOPSIS
+.nf
+\&ag\-cli org runner\-group [flags]
+.fi
+.SH DESCRIPTION
+\&Inspect organization\-level AtomGit Actions runner groups and their read\-only associations.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli org runner\-group list my\-organization
+\&  ag\-cli org runner\-group view my\-organization group\-id
+\&  ag\-cli org runner\-group runners my\-organization group\-id \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-org\fR(1),
+\fBag\-cli\-org\-runner\-group\-list\fR(1),
+\fBag\-cli\-org\-runner\-group\-namespaces\fR(1),
+\fBag\-cli\-org\-runner\-group\-runner\-sets\fR(1),
+\fBag\-cli\-org\-runner\-group\-runners\fR(1),
+\fBag\-cli\-org\-runner\-group\-view\fR(1)

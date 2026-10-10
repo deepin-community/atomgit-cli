@@ -1,0 +1,34 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RELEASE\-VIEW" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-release\-view \- View a release by tag
+.SH SYNOPSIS
+.nf
+\&ag\-cli release view [<owner>/<repo>] <tag> [flags]
+.fi
+.SH DESCRIPTION
+\&Show details of a single release identified by its tag.
+\&Use \-\-json to output one JSON object with release metadata, body, and assets.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output release details as JSON
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli release view owner/repo v1.0.0
+\&  ag\-cli release view owner/repo v1.0.0 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-release\fR(1)

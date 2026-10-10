@@ -1,0 +1,48 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-list \- List issues
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue list [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List issues
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-assignee <string>\fR
+\&Filter by assignee: @me for issues assigned to you across all your repositories
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-author <string>\fR
+\&Filter by author: @me for issues you created across all your repositories
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-involved <string>\fR
+\&Filter by involvement: @me for issues you created or are assigned to across all your repositories
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-json\fR
+\&Output issues as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of issues to list
+\&Default: \(dq30\(dq.
+.TP
+\fB\-s, \-\-state <string>\fR
+\&Filter by state: open, closed, all
+\&Default: \(dqopen\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

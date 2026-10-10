@@ -1,0 +1,32 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-INSIGHTS\-CONTRIBUTORS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-insights\-contributors \- List repository contributor statistics
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo insights contributors [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List repository contributor statistics
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output contributors as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of contributors to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-repo\-insights\fR(1)

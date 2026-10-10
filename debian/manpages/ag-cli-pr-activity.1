@@ -1,0 +1,40 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-ACTIVITY" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-activity \- List the operation log of a pull request
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr activity [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&List the operation log of a pull request.
+.PP
+\&The operate_logs endpoint supports pagination; \-\-limit caps how many entries
+\&are fetched across pages.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output activity as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of activity entries to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli pr activity owner/repo 42
+\&  ag\-cli pr activity owner/repo 42 \-\-limit 50 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

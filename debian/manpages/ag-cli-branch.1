@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-BRANCH" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-branch \- Manage remote branches
+.SH SYNOPSIS
+.nf
+\&ag\-cli branch [flags]
+.fi
+.SH DESCRIPTION
+\&List, view, create, delete, and protect AtomGit remote branches.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli branch list owner/repo
+\&  ag\-cli branch view owner/repo main
+\&  ag\-cli branch create owner/repo feature/foo \-\-ref main
+\&  ag\-cli branch delete owner/repo feature/foo
+\&  ag\-cli branch protection list owner/repo
+.fi
+.SH SEE ALSO
+\fBag\-cli\fR(1),
+\fBag\-cli\-branch\-create\fR(1),
+\fBag\-cli\-branch\-delete\fR(1),
+\fBag\-cli\-branch\-list\fR(1),
+\fBag\-cli\-branch\-protection\fR(1),
+\fBag\-cli\-branch\-view\fR(1)

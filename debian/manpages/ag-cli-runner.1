@@ -1,0 +1,30 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RUNNER" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-runner \- Inspect AtomGit Actions host runners
+.SH SYNOPSIS
+.nf
+\&ag\-cli runner [flags]
+.fi
+.SH DESCRIPTION
+\&List repository\-specific and shared AtomGit Actions host runners. These commands are read\-only.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli runner list owner/repo
+\&  ag\-cli runner shared owner/repo \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\fR(1),
+\fBag\-cli\-runner\-list\fR(1),
+\fBag\-cli\-runner\-shared\fR(1)

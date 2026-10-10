@@ -1,0 +1,42 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-NOTIFICATION\-MARK\-READ" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-notification\-mark\-read \- Mark repository notifications as read
+.SH SYNOPSIS
+.nf
+\&ag\-cli notification mark\-read [<owner>/<repo>] [<notification\-id>...] [flags]
+.fi
+.SH DESCRIPTION
+\&Mark notifications for a repository as read.
+.PP
+\&Pass one or more notification IDs (as shown by \(dqag\-cli notification list\(dq) to
+\&mark exactly those notifications, or pass \-\-all to mark every unread
+\&notification in the repository. \-\-all asks for confirmation unless \-\-yes is
+\&supplied.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-all\fR
+\&Mark every unread notification in the repository
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip the \-\-all confirmation prompt
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli notification mark\-read owner/repo 292ecbec857e4f27b426d66f2157938c
+\&  ag\-cli notification mark\-read \-\-all \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-notification\fR(1)

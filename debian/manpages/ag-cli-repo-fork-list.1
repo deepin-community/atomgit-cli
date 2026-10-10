@@ -1,0 +1,41 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-FORK\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-fork\-list \- List forks of a repository
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo fork list [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List existing forks of a repository.
+.PP
+\&This is read\-only and is separate from `ag\-cli repo fork`, which creates a new fork.
+\&The repository can be supplied explicitly or inferred from the current Git repository.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output forks as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of forks to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli repo fork list owner/repo
+\&  ag\-cli repo fork list owner/repo \-\-limit 100 \-\-json
+\&  ag\-cli repo fork list
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\-fork\fR(1)

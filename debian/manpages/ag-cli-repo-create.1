@@ -1,0 +1,56 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-create \- Create a new repository
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo create <repo> | <owner>/<repo> [flags]
+.fi
+.SH DESCRIPTION
+\&Create a new repository on AtomGit.
+.PP
+\&Use repo to create the repository under your current account, or owner/repo to
+\&create it under an explicitly specified user or organization namespace.
+\&Pass \-\-public to make the repository public, or \-\-private for private.
+\&If neither is specified, it defaults to private.
+.PP
+\&Pass \-\-clone to clone the repository locally after creation.
+.SH OPTIONS
+.TP
+\fB\-c, \-\-clone\fR
+\&Clone the repository after creation
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-d, \-\-description <string>\fR
+\&Description of the repository
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-private\fR
+\&Make the repository private
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-public\fR
+\&Make the repository public
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&# Create a new private repository under your account
+\&  ag\-cli repo create my\-project
+.PP
+\&  # Create a public repository and clone it
+\&  ag\-cli repo create my\-project \-\-public \-\-clone
+.PP
+\&  # Create a repository in an organization
+\&  ag\-cli repo create my\-org/my\-project \-\-public
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1)

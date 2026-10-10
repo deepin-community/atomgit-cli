@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-TAG\-PROTECTION\-DELETE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-tag\-protection\-delete \- Delete a protected tag rule
+.SH SYNOPSIS
+.nf
+\&ag\-cli tag protection delete [<owner>/<repo>] <tag\-or\-pattern> [flags]
+.fi
+.SH DESCRIPTION
+\&Delete a protected tag rule.
+.PP
+\&By default, the current repository and rule are shown and you will be prompted
+\&to confirm. Use \-\-yes to skip the confirmation prompt.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip deletion confirmation
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli tag protection delete owner/repo \(dqv*\(dq
+\&  ag\-cli tag protection delete owner/repo \(dqv*\(dq \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-tag\-protection\fR(1)

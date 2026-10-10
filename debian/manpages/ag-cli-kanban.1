@@ -1,0 +1,30 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-KANBAN" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-kanban \- View organization Kanban boards
+.SH SYNOPSIS
+.nf
+\&ag\-cli kanban [flags]
+.fi
+.SH DESCRIPTION
+\&List and inspect read\-only organization Kanban boards and their Issue/Pull Request items.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli kanban list hust\-open\-atom\-club
+\&  ag\-cli kanban view hust\-open\-atom\-club 1234567890
+\&  ag\-cli kanban items hust\-open\-atom\-club 1234567890 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\fR(1),
+\fBag\-cli\-kanban\-items\fR(1),
+\fBag\-cli\-kanban\-list\fR(1),
+\fBag\-cli\-kanban\-view\fR(1)

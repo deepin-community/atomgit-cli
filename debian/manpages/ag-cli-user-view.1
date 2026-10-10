@@ -1,0 +1,37 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-USER\-VIEW" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-user\-view \- View the current user or a public user profile
+.SH SYNOPSIS
+.nf
+\&ag\-cli user view [<login>] [flags]
+.fi
+.SH DESCRIPTION
+\&View the current user or a public user profile
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output the user profile as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-w, \-\-web\fR
+\&Open the user profile in the browser
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli user view
+\&  ag\-cli user view alice
+\&  ag\-cli user view alice \-\-json
+\&  ag\-cli user view alice \-\-web
+.fi
+.SH SEE ALSO
+\fBag\-cli\-user\fR(1)

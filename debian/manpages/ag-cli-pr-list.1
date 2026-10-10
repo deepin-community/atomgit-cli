@@ -1,0 +1,52 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-list \- List pull requests
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr list [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List pull requests
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-assignee <string>\fR
+\&Filter by assignee: @me for PRs assigned to you across all your repositories
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-author <string>\fR
+\&Filter by author: @me for PRs you created across all your repositories
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-json\fR
+\&Output pull requests as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of PRs to list
+\&Default: \(dq30\(dq.
+.TP
+\fB\-\-review\-needed <string>\fR
+\&Filter by requested reviewer: @me for PRs that need your review across all your repositories
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-review\-requested <string>\fR
+\&Filter by requested approver: @me for PRs that need your approval across all your repositories
+\&Default: \(dq\(dq.
+.TP
+\fB\-s, \-\-state <string>\fR
+\&Filter by state: open, closed, locked, merged, all
+\&Default: \(dqopen\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

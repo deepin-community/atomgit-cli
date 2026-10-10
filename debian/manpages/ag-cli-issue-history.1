@@ -1,0 +1,39 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-HISTORY" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-history \- List modification history for an issue
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue history [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&List modification history for an issue.
+.PP
+\&The API returns an unpaginated list; \-\-limit caps the displayed entries in server order. JSON includes both the creator and updater of each version.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output entries as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of entries to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli issue history owner/repo 42
+\&  ag\-cli issue history 42 \-\-limit 100 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

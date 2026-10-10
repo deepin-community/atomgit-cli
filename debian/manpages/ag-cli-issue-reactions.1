@@ -1,0 +1,39 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-REACTIONS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-reactions \- List reactions on an issue
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue reactions [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&List reactions on an issue.
+.PP
+\&Fetch paginated reactions up to \-\-limit. The API does not provide reaction timestamps.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output entries as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of entries to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli issue reactions owner/repo 42
+\&  ag\-cli issue reactions 42 \-\-limit 100 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

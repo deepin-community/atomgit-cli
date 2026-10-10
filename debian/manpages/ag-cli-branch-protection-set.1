@@ -1,0 +1,50 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-BRANCH\-PROTECTION\-SET" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-branch\-protection\-set \- Create or update a protected branch rule
+.SH SYNOPSIS
+.nf
+\&ag\-cli branch protection set [<owner>/<repo>] <branch\-or\-pattern> [flags]
+.fi
+.SH DESCRIPTION
+\&Create or update a protected branch rule.
+.PP
+\&Permission values are semicolon\-separated role names or usernames. Supported
+\&roles are develop, admin, and maintainer. An explicitly empty value denies the
+\&operation to everyone. Existing rules preserve any permission whose flag is
+\&omitted; new rules require both \-\-push and \-\-merge. Updating an existing rule
+\&requires confirmation unless \-\-yes is supplied. AtomGit requires every role or
+\&user allowed to push to also be explicitly allowed to merge.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-merge <string>\fR
+\&Merge allowlist: develop, admin, maintainer, usernames, or empty
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-push <string>\fR
+\&Push allowlist: develop, admin, maintainer, usernames, or empty
+\&Default: \(dq\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation when updating an existing rule
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli branch protection set owner/repo main \-\-push admin \-\-merge admin
+\&  ag\-cli branch protection set owner/repo main \-\-push maintainer \-\-merge maintainer
+\&  ag\-cli branch protection set owner/repo \(dqrelease/*\(dq \-\-push \(dqdevelop;alice\(dq \-\-merge \(dqdevelop;alice\(dq
+\&  ag\-cli branch protection set owner/repo main \-\-push \(dq\(dq \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-branch\-protection\fR(1)

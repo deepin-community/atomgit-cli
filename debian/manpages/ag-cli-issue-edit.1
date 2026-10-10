@@ -1,0 +1,55 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-EDIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-edit \- Edit an issue
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue edit [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&Edit an issue
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-assignee <string>\fR
+\&Set the issue assignee (login)
+\&Default: \(dq\(dq.
+.TP
+\fB\-b, \-\-body <string>\fR
+\&New issue body
+\&Default: \(dq\(dq.
+.TP
+\fB\-F, \-\-body\-file <string>\fR
+\&Read the new issue body from a file
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-remove\-assignee\fR
+\&Clear the issue assignee
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-t, \-\-title <string>\fR
+\&New issue title
+\&Default: \(dq\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation prompt
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli issue edit owner/repo 42 \-\-title \(dqnew title\(dq \-\-body \(dqnew body\(dq
+\&  ag\-cli issue edit owner/repo 42 \-\-assignee alice
+\&  ag\-cli issue edit owner/repo 42 \-\-remove\-assignee \-\-yes
+\&  ag\-cli issue edit owner/repo 42 \-\-body\-file description.md
+.fi
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

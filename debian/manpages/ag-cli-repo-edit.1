@@ -1,0 +1,76 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-EDIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-edit \- Edit repository settings
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo edit [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Edit supported repository metadata and visibility on AtomGit.
+.PP
+\&Only flags explicitly provided are sent to AtomGit; omitted settings remain
+\&unchanged. Name and visibility updates require confirmation unless \-\-yes is
+\&used. \-\-visibility, \-\-public, and \-\-private are mutually exclusive.
+.PP
+\&This command does not change the repository path, owner, homepage, LFS state,
+\&module switches, merge policies, or other unsupported GitHub CLI settings.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-default\-branch <string>\fR
+\&New default branch
+\&Default: \(dq\(dq.
+.TP
+\fB\-d, \-\-description <string>\fR
+\&New repository description
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-name <string>\fR
+\&New repository name (does not change the repository path)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-private\fR
+\&Make the repository private
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-public\fR
+\&Make the repository public
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-visibility <string>\fR
+\&New visibility: public or private
+\&Default: \(dq\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation for name or visibility changes
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&# Update the current Git repository
+\&  ag\-cli repo edit \-\-description \(dqNew description\(dq
+.PP
+\&  # Update an explicitly selected repository
+\&  ag\-cli repo edit owner/repo \-\-description \(dqNew description\(dq
+.PP
+\&  # Clear a description without changing other settings
+\&  ag\-cli repo edit owner/repo \-\-description \(dq\(dq
+.PP
+\&  # Update several settings
+\&  ag\-cli repo edit owner/repo \-\-name \(dqNew name\(dq \-\-default\-branch main \-\-visibility private
+.PP
+\&  # Skip confirmation for a visibility update
+\&  ag\-cli repo edit owner/repo \-\-public \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1)

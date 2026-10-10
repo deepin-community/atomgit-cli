@@ -1,0 +1,50 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RELEASE\-EDIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-release\-edit \- Edit a release
+.SH SYNOPSIS
+.nf
+\&ag\-cli release edit [<owner>/<repo>] <tag> [flags]
+.fi
+.SH DESCRIPTION
+\&Edit an existing release identified by its tag.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-b, \-\-body <string>\fR
+\&New release body text
+\&Default: \(dq\(dq.
+.TP
+\fB\-F, \-\-body\-file <string>\fR
+\&Path to file containing new release body
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-latest\fR
+\&Set release status to latest (release_status=latest)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-n, \-\-name <string>\fR
+\&New release name
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-prerelease\fR
+\&Set release status to prerelease (release_status=pre)
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli release edit owner/repo v1.0.0 \-\-name \(dqFirst Release\(dq
+\&  ag\-cli release edit owner/repo v1.0.0 \-\-latest \-\-body\-file notes.md
+\&  ag\-cli release edit owner/repo v1.0.0\-rc \-\-prerelease
+.fi
+.SH SEE ALSO
+\fBag\-cli\-release\fR(1)

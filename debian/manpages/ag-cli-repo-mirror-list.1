@@ -1,0 +1,38 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-MIRROR\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-mirror\-list \- List configured push remote mirrors
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo mirror list [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List configured push remote mirrors. Destinations and returned messages are sanitized before text or JSON output.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output push remote mirrors as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of push remote mirrors to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli repo mirror list owner/repo
+\&  ag\-cli repo mirror list owner/repo \-\-limit 100 \-\-json
+\&  ag\-cli repo mirror list
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\-mirror\fR(1)

@@ -1,0 +1,41 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-REVIEW" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-review \- Approve a pull request review
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr review <owner>/<repo> <number> [flags]
+.fi
+.SH DESCRIPTION
+\&Approve a pull request using AtomGit's formal review API.
+.PP
+\&AtomGit currently exposes approval as the only review action. Use ag\-cli pr comment
+\&create to leave an ordinary comment; request\-changes reviews are not supported
+\&by the public API.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-approve\fR
+\&Approve the pull request
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-force\fR
+\&Force approval as a repository administrator
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli pr review owner/repo 42 \-\-approve
+\&  ag\-cli pr review owner/repo 42 \-\-approve \-\-force
+.fi
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

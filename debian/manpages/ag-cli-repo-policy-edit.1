@@ -1,0 +1,163 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-POLICY\-EDIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-policy\-edit \- Edit one repository policy section
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo policy edit [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Send only explicitly supplied settings. False, zero, and empty strings are preserved.
+\&All changes require confirmation unless \-\-yes is supplied.
+\&Code\-review assignees/testers are usernames; pull\-request approver/tester IDs are IDs.
+\&Permission mode must be 1 (inherited) or 2 (independent).
+\&Approval\-required\-reviewers must be 0..5; other counts must be nonnegative.
+\&Merge\-method: merge, rebase_merge, ff. Merged\-commit\-author: merged_by, created_by.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-add\-notes\-after\-merged\fR
+\&Allow review and comments after merging (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-approval\-approver\-ids <string>\fR
+\&Comma\-separated approver user IDs (empty clears) (pull\-request section)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-approval\-required\-approvers <int>\fR
+\&Minimum approver count (nonnegative) (pull\-request section)
+\&Default: \(dq0\(dq.
+.TP
+\fB\-\-approval\-required\-reviewers <int>\fR
+\&Minimum reviewer count: 0 disables, otherwise 1..5 (pull\-request section)
+\&Default: \(dq0\(dq.
+.TP
+\fB\-\-approval\-required\-reviewers\-enable\fR
+\&Enable the minimum reviewer gate (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-approval\-required\-testers <int>\fR
+\&Minimum tester count (nonnegative) (pull\-request section)
+\&Default: \(dq0\(dq.
+.TP
+\fB\-\-approval\-tester\-ids <string>\fR
+\&Comma\-separated tester user IDs (empty clears) (pull\-request section)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-assignees <string>\fR
+\&Comma\-separated approver usernames (empty clears)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-assignees\-number <int>\fR
+\&Minimum approver count (0 disables)
+\&Default: \(dq0\(dq.
+.TP
+\fB\-\-auto\-squash\-merge\fR
+\&Enable squash by default for new pull requests (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-can\-force\-merge\fR
+\&Allow administrators to force merge (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-can\-reopen\fR
+\&Allow reopening closed pull requests (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-close\-issue\-when\-mr\-merged\fR
+\&Select closing linked issues by default (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-delete\-source\-branch\-when\-merged\fR
+\&Delete the source branch by default after merging (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-disable\-merge\-by\-self\fR
+\&Prevent authors from merging their own pull requests (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-disable\-squash\-merge\fR
+\&Disable squash merging (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-forbidden\-pr\-related\-issue\-closed\fR
+\&Disable the option to close linked issues after merging (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-is\-allow\-lite\-merge\-request\fR
+\&Enable lightweight pull requests (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-is\-check\-cla\fR
+\&Require CLA validation (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-json\fR
+\&Output the submitted fields as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-lite\-merge\-request\-prefix\-title <string>\fR
+\&Lightweight pull request title prefix (empty clears) (pull\-request section)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-mark\-auto\-merged\-mr\-as\-closed\fR
+\&Mark automatically merged pull requests as closed (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-merge\-method <string>\fR
+\&Merge method: merge, rebase_merge, or ff (pull\-request section)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-merged\-commit\-author <string>\fR
+\&Merge commit author: merged_by or created_by (pull\-request section)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-mode <int>\fR
+\&Permission mode: 1 (inherited), 2 (independent)
+\&Default: \(dq0\(dq.
+.TP
+\fB\-\-only\-allow\-merge\-if\-all\-discussions\-are\-resolved\fR
+\&Require all review discussions to be resolved (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-only\-allow\-merge\-if\-pipeline\-succeeds\fR
+\&Require a successful pipeline before merging (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-section <string>\fR
+\&Section: permission, code\-review, or pull\-request (required)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-squash\-merge\-with\-no\-merge\-commit\fR
+\&Do not create a merge commit for squash merges (pull\-request section)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-testers <string>\fR
+\&Comma\-separated tester usernames (empty clears)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-testers\-number <int>\fR
+\&Minimum tester count (0 disables)
+\&Default: \(dq0\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip update confirmation
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli repo policy edit owner/repo \-\-section permission \-\-mode 2 \-\-yes
+\&  ag\-cli repo policy edit \-\-section code\-review \-\-assignees alice,bob \-\-testers\-number 0
+\&  ag\-cli repo policy edit owner/repo \-\-section pull\-request \-\-can\-force\-merge=false \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\-policy\fR(1)

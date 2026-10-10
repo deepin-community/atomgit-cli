@@ -1,0 +1,33 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-MILESTONE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-milestone \- Manage repository milestones
+.SH SYNOPSIS
+.nf
+\&ag\-cli milestone [flags]
+.fi
+.SH DESCRIPTION
+\&List, view, create, update, close, reopen, and delete repository milestones.
+.PP
+\&AtomGit requires title and due_on on every milestone PATCH. Edit, close, and
+\&reopen read the current milestone first and preserve those required fields.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\fR(1),
+\fBag\-cli\-milestone\-close\fR(1),
+\fBag\-cli\-milestone\-create\fR(1),
+\fBag\-cli\-milestone\-delete\fR(1),
+\fBag\-cli\-milestone\-edit\fR(1),
+\fBag\-cli\-milestone\-list\fR(1),
+\fBag\-cli\-milestone\-reopen\fR(1),
+\fBag\-cli\-milestone\-view\fR(1)

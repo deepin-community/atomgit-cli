@@ -1,0 +1,28 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-UNLINK\-ISSUES" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-unlink\-issues \- Unlink issues from a pull request
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr unlink\-issues [<owner>/<repo>] <pr_number> [flags]
+.fi
+.SH DESCRIPTION
+\&Unlink one or more issues from a pull request.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-i, \-\-issue <stringArray>\fR
+\&Issue number to unlink (can be specified multiple times)
+\&Default: \(dq[]\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

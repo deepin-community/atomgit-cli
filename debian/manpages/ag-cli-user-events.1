@@ -1,0 +1,41 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-USER\-EVENTS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-user\-events \- List personal activity events for a user
+.SH SYNOPSIS
+.nf
+\&ag\-cli user events [<username>] [flags]
+.fi
+.SH DESCRIPTION
+\&List personal activity events for a user. Without an explicit username, the authenticated user is used.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output events as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of events to list
+\&Default: \(dq30\(dq.
+.TP
+\fB\-\-year <int>\fR
+\&Filter events to the specified year (0 disables the filter)
+\&Default: \(dq0\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli user events
+\&  ag\-cli user events alice
+\&  ag\-cli user events alice \-\-year 2026 \-\-limit 50
+\&  ag\-cli user events alice \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-user\fR(1)

@@ -1,0 +1,32 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-TAG\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-tag\-create \- Create a tag
+.SH SYNOPSIS
+.nf
+\&ag\-cli tag create [<owner>/<repo>] <tag_name> [flags]
+.fi
+.SH DESCRIPTION
+\&Create a tag
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-m, \-\-message <string>\fR
+\&Tag message
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-ref <string>\fR
+\&Branch, tag, or commit SHA to create the tag from (required)
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-tag\fR(1)
