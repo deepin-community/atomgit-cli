@@ -7,12 +7,17 @@ export GOMODCACHE=/tmp/go-modcache
 export HOME=/tmp/go-home
 
 MAN_DIR := $(CURDIR)/debian/manpages
+PKG     := atomgit.com/hust-open-atom-club/atomgit-cli/internal/version
+UPSTREAM_VERSION := $(shell dpkg-parsechangelog -SVersion | sed 's/-[^-]*$$//')
 
 %:
 	dh $@ --buildsystem=golang --with=golang
 
 override_dh_auto_build:
-	go build -ldflags="-s -w" -o ag-cli ./cmd/ag-cli
+	go build -ldflags="-s -w \
+	  -X $(PKG).Version=v$(UPSTREAM_VERSION) \
+	  -X $(PKG).BuildDate=$(shell date -u +%Y-%m-%dT%H:%M:%SZ)" \
+	  -o ag-cli ./cmd/ag-cli
 
 override_dh_auto_install:
 	install -Dm755 ag-cli $(CURDIR)/debian/atomgit-cli/usr/bin/ag-cli
