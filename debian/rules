@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 
-export GO111MODULE=on
-export GOPROXY=https://goproxy.cn,direct
+export GOTOOLCHAIN=local
+export GOPROXY=off
+export GOFLAGS=-mod=vendor
 export GOCACHE=/tmp/go-cache
 export GOMODCACHE=/tmp/go-modcache
 export HOME=/tmp/go-home
