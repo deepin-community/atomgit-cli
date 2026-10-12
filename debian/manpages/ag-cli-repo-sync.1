@@ -1,0 +1,58 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-SYNC" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-sync \- Synchronize a fork with its upstream repository
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo sync [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Synchronize a remote AtomGit fork branch with its upstream repository.
+.PP
+\&The repository must be a fork with an available upstream repository. The
+\&repository default branch is used unless \-\-branch is specified. This command
+\&updates only the remote fork and does not modify the local Git working tree.
+.PP
+\&By default, AtomGit performs a non\-forced synchronization and reports a
+\&conflict instead of overwriting divergent commits. \-\-force requires an
+\&interactive confirmation unless \-\-yes is also supplied.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-b, \-\-branch <string>\fR
+\&Branch to synchronize (defaults to the repository default branch)
+\&Default: \(dq\(dq.
+.TP
+\fB\-f, \-\-force\fR
+\&Overwrite divergent commits after confirmation
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation when \-\-force is used
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&# Synchronize the current repository's default branch
+\&  ag\-cli repo sync
+.PP
+\&  # Synchronize an explicit branch of a fork
+\&  ag\-cli repo sync owner/fork \-\-branch develop
+.PP
+\&  # Force synchronization after interactive confirmation
+\&  ag\-cli repo sync owner/fork \-\-branch develop \-\-force
+.PP
+\&  # Force synchronization non\-interactively
+\&  ag\-cli repo sync owner/fork \-\-branch develop \-\-force \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1)

@@ -1,0 +1,38 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-CONTENT\-VIEW" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-content\-view \- View a repository file
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo content view [<owner>/<repo>] <path> [flags]
+.fi
+.SH DESCRIPTION
+\&View a repository file
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output the complete API file object as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-ref <string>\fR
+\&Branch, tag, or commit identifier
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli repo content view README.md
+\&  ag\-cli repo content view owner/repo src/main.go \-\-ref dev
+\&  ag\-cli repo content view owner/repo README.md \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\-content\fR(1)

@@ -1,0 +1,59 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-NOTIFICATION\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-notification\-list \- List repository notifications
+.SH SYNOPSIS
+.nf
+\&ag\-cli notification list [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List notifications for a repository, most recent first.
+.PP
+\&By default all notifications are listed; \-\-unread keeps only unread ones.
+\&\-\-since and \-\-before accept RFC 3339 timestamps (for example
+\&2026\-08\-14T00:00:00+08:00). \-\-type keeps only notifications of one type,
+\&such as merge_requests_open or issue_open.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-before <string>\fR
+\&Only list notifications updated before this RFC 3339 timestamp
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-json\fR
+\&Output notifications as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of notifications to list
+\&Default: \(dq30\(dq.
+.TP
+\fB\-\-since <string>\fR
+\&Only list notifications updated at or after this RFC 3339 timestamp
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-type <string>\fR
+\&Only list notifications of this type (for example merge_requests_open)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-unread\fR
+\&Only list unread notifications
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli notification list owner/repo \-\-limit 20
+\&  ag\-cli notification list \-\-unread \-\-json
+\&  ag\-cli notification list owner/repo \-\-type issue_open \-\-since 2026\-08\-01T00:00:00Z
+.fi
+.SH SEE ALSO
+\fBag\-cli\-notification\fR(1)

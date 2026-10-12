@@ -1,0 +1,68 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-USER\-EDIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-user\-edit \- Edit the authenticated user's profile
+.SH SYNOPSIS
+.nf
+\&ag\-cli user edit [flags]
+.fi
+.SH DESCRIPTION
+\&Edit supported profile fields for the authenticated AtomGit user.
+.PP
+\&Only flags explicitly provided are sent to AtomGit. Pass an empty string to
+\&clear a supported field. This command does not upload avatar files, verify
+\&email addresses, or rename the account login.
+.SH OPTIONS
+.TP
+\fB\-\-avatar <string>\fR
+\&Avatar URL
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-company <string>\fR
+\&Company name
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-description <string>\fR
+\&Profile description
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-email <string>\fR
+\&Public email address
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-github\-account <string>\fR
+\&GitHub account name
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-json\fR
+\&Output the updated profile as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-location <string>\fR
+\&Profile location
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-nickname <string>\fR
+\&Profile nickname
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-website <string>\fR
+\&Website URL
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli user edit \-\-nickname \(dqAlice\(dq \-\-company \(dqExample Inc.\(dq
+\&  ag\-cli user edit \-\-description \(dq\(dq \-\-location \(dqWuhan\(dq
+\&  ag\-cli user edit \-\-website \(dqhttps://example.com\(dq \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-user\fR(1)

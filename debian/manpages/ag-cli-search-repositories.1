@@ -1,0 +1,52 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-SEARCH\-REPOSITORIES" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-search\-repositories \- search repositories
+.SH SYNOPSIS
+.nf
+\&ag\-cli search repositories <query> [flags]
+.fi
+.SH DESCRIPTION
+\&search repositories
+.SH ALIASES
+\&repos
+.SH OPTIONS
+.TP
+\fB\-\-fork\fR
+\&Include forked repositories
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-json\fR
+\&Output results as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-language <string>\fR
+\&Filter by repository language
+\&Default: \(dq\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of results
+\&Default: \(dq30\(dq.
+.TP
+\fB\-\-order <string>\fR
+\&Sort order: asc or desc
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-owner <string>\fR
+\&Filter by repository owner path
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-sort <string>\fR
+\&Sort by last_push_at, stars_count, or forks_count
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-search\fR(1)

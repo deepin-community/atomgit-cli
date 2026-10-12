@@ -1,0 +1,32 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-BRANCH\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-branch\-create \- Create a remote branch
+.SH SYNOPSIS
+.nf
+\&ag\-cli branch create [<owner>/<repo>] <branch> \-\-ref <ref> [flags]
+.fi
+.SH DESCRIPTION
+\&Create a remote branch
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-ref <string>\fR
+\&Source ref to create the branch from
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli branch create owner/repo feature/foo \-\-ref main
+.fi
+.SH SEE ALSO
+\fBag\-cli\-branch\fR(1)

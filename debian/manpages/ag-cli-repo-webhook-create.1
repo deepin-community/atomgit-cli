@@ -1,0 +1,52 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-WEBHOOK\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-webhook\-create \- Create a repository webhook
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo webhook create [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Create a repository webhook
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-encryption <string>\fR
+\&Secret mode: password or signature
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-events <string>\fR
+\&Comma\-separated events: push, tag\-push, issues, note, merge\-requests
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-secret\-env <string>\fR
+\&Read the webhook secret from this environment variable
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-secret\-file <string>\fR
+\&Read the webhook secret from a file
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-secret\-stdin\fR
+\&Read the webhook secret from standard input
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-url <string>\fR
+\&Webhook target HTTP(S) URL
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli repo webhook create owner/repo \-\-url https://example.com/hook \-\-events push,issues \-\-secret\-env WEBHOOK_SECRET
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\-webhook\fR(1)

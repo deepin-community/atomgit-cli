@@ -1,0 +1,34 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RUN\-ARTIFACT\-DELETE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-run\-artifact\-delete \- Delete a workflow artifact
+.SH SYNOPSIS
+.nf
+\&ag\-cli run artifact delete [<owner>/<repo>] <artifact\-id> [flags]
+.fi
+.SH DESCRIPTION
+\&Delete an AtomGit Actions artifact after reading its metadata.
+.PP
+\&By default, the command displays the artifact details and asks for
+\&confirmation. Deletion cannot be undone. Use \-\-yes to skip the prompt.
+.SH OPTIONS
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip deletion confirmation
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli run artifact delete owner/repo <artifact\-id>
+\&  ag\-cli run artifact delete <artifact\-id> \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-run\-artifact\fR(1)

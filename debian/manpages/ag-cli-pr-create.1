@@ -1,0 +1,84 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-create \- Create a pull request
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr create [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Create a pull request and optionally set its collaboration metadata.
+.PP
+\&Assignees own follow\-up work, approval reviewers approve the change, and
+\&testers verify it. These AtomGit roles are managed independently. Labels and
+\&milestones must already exist in the repository.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-assignee <stringSlice>\fR
+\&Assignee login (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-base <string>\fR
+\&Base branch (defaults to repository default)
+\&Default: \(dq\(dq.
+.TP
+\fB\-b, \-\-body <string>\fR
+\&PR body
+\&Default: \(dq\(dq.
+.TP
+\fB\-F, \-\-body\-file <string>\fR
+\&Read PR body from file (use \- for stdin)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-draft\fR
+\&Mark pull request as a draft
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-head <string>\fR
+\&Head branch
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-label <stringSlice>\fR
+\&Label name (repeat for multiple labels)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-milestone <string>\fR
+\&Milestone number or exact title
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-prune\-branch\fR
+\&Delete the source branch after the PR is merged
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-reviewer <stringSlice>\fR
+\&Approval reviewer login (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-tester <stringSlice>\fR
+\&Tester login (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-t, \-\-title <string>\fR
+\&PR title
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli pr create owner/repo \-\-title \(dqFix bug\(dq \-\-body \(dqDescription\(dq \-\-base main \-\-head feature
+\&  ag\-cli pr create owner/repo \-\-title \(dqFix bug\(dq \-\-body \(dqDescription\(dq \-\-base main \-\-head feature \-\-draft
+\&  ag\-cli pr create owner/repo \-\-title \(dqFix bug\(dq \-\-body\-file description.md \-\-base main \-\-head feature
+\&  ag\-cli pr create owner/repo \-\-title \(dqFix bug\(dq \-\-body\-file \- \-\-base main \-\-head feature
+\&  ag\-cli pr create owner/repo \-\-title \(dqFix bug\(dq \-\-head feature \-\-prune\-branch
+.fi
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

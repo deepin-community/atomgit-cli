@@ -1,0 +1,29 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-PUSH\-RULE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-push\-rule \- Manage repository push rules
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo push\-rule [flags]
+.fi
+.SH DESCRIPTION
+\&View and edit repository\-wide push rules.
+.PP
+\&These rules cover signed commits, commit message validation, maximum file
+\&size, owner exemptions, and force pushes. Branch and tag protection rules are
+\&managed separately.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1),
+\fBag\-cli\-repo\-push\-rule\-edit\fR(1),
+\fBag\-cli\-repo\-push\-rule\-view\fR(1)

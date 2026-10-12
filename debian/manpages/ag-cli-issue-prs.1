@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-PRS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-prs \- List pull requests linked to an issue
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue prs [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&List pull requests linked to an issue.
+.PP
+\&Concurrent updates to linked pull requests are not reflected until the next
+\&request.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output linked pull requests as JSON
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli issue prs owner/repo 42
+\&  ag\-cli issue prs owner/repo 42 \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

@@ -1,0 +1,31 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-TAG\-PROTECTION" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-tag\-protection \- Manage protected tag rules
+.SH SYNOPSIS
+.nf
+\&ag\-cli tag protection [flags]
+.fi
+.SH DESCRIPTION
+\&List, view, create, update, and delete protected tag rules.
+.PP
+\&Rules may name an exact tag or contain an AtomGit wildcard pattern. AtomGit's
+\&API exposes only create/push access levels; other web settings are not changed
+\&by this command.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-tag\fR(1),
+\fBag\-cli\-tag\-protection\-delete\fR(1),
+\fBag\-cli\-tag\-protection\-list\fR(1),
+\fBag\-cli\-tag\-protection\-set\fR(1),
+\fBag\-cli\-tag\-protection\-view\fR(1)

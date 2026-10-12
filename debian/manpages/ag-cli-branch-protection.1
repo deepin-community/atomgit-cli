@@ -1,0 +1,31 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-BRANCH\-PROTECTION" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-branch\-protection \- Manage protected branch rules
+.SH SYNOPSIS
+.nf
+\&ag\-cli branch protection [flags]
+.fi
+.SH DESCRIPTION
+\&List, view, create, update, and delete protected branch rules.
+.PP
+\&Rules may name an exact branch or contain an AtomGit wildcard pattern. Exact
+\&rules take precedence over matching wildcard rules. AtomGit's API exposes only
+\&push and merge allowlists; other web settings are not changed by this command.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-branch\fR(1),
+\fBag\-cli\-branch\-protection\-delete\fR(1),
+\fBag\-cli\-branch\-protection\-list\fR(1),
+\fBag\-cli\-branch\-protection\-set\fR(1),
+\fBag\-cli\-branch\-protection\-view\fR(1)

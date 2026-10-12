@@ -1,0 +1,49 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RELEASE\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-release\-create \- Create a release
+.SH SYNOPSIS
+.nf
+\&ag\-cli release create [<owner>/<repo>] <tag> [flags]
+.fi
+.SH DESCRIPTION
+\&Create a release for a repository identified by its tag. A non\-empty release body is required by the AtomGit API.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-b, \-\-body <string>\fR
+\&Release body text
+\&Default: \(dq\(dq.
+.TP
+\fB\-F, \-\-body\-file <string>\fR
+\&Path to file containing release body
+\&Default: \(dq\(dq.
+.TP
+\fB\-n, \-\-name <string>\fR
+\&Release name (defaults to tag)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-prerelease\fR
+\&Mark release as a prerelease (release_status=pre)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-target <string>\fR
+\&Target commitish (branch or SHA)
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli release create owner/repo v1.0.0 \-\-name \(dqFirst\(dq \-\-body \(dqInitial release\(dq
+\&  ag\-cli release create owner/repo v1.0.0\-rc \-\-prerelease \-\-body\-file notes.md
+.fi
+.SH SEE ALSO
+\fBag\-cli\-release\fR(1)

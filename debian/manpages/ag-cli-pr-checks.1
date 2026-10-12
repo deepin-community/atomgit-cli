@@ -1,0 +1,38 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-CHECKS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-checks \- Show CI checks for a pull request's current head commit
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr checks [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&Show AtomGit Actions runs for a pull request's current head commit. This command does not infer or report required\-check semantics.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-i, \-\-interval <duration>\fR
+\&Polling interval when using \-\-watch
+\&Default: \(dq10s\(dq.
+.TP
+\fB\-w, \-\-watch\fR
+\&Watch checks until they reach a terminal state
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli pr checks owner/repo 42
+\&  ag\-cli pr checks 42 \-\-watch
+\&  ag\-cli pr checks owner/repo 42 \-\-watch \-\-interval 5s
+.fi
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

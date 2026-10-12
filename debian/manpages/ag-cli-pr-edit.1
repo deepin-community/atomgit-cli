@@ -1,0 +1,83 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-EDIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-edit \- Edit a pull request
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr edit [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&Edit a pull request and explicitly add or remove collaboration metadata.
+.PP
+\&Assignees, approval reviewers, and testers are distinct AtomGit roles.
+\&Unspecified metadata is left unchanged; use \-\-milestone none to clear the
+\&current milestone.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-add\-assignee <stringSlice>\fR
+\&Assignee login to add (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-add\-label <stringSlice>\fR
+\&Label name to add (repeat for multiple labels)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-add\-reviewer <stringSlice>\fR
+\&Approval reviewer login to add (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-add\-tester <stringSlice>\fR
+\&Tester login to add (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-b, \-\-body <string>\fR
+\&New PR body
+\&Default: \(dq\(dq.
+.TP
+\fB\-F, \-\-body\-file <string>\fR
+\&Read new PR body from file (use \- for stdin)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-milestone <string>\fR
+\&Milestone number, exact title, or 'none' to clear
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-remove\-assignee <stringSlice>\fR
+\&Assignee login to remove (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-remove\-label <stringSlice>\fR
+\&Label name to remove (repeat for multiple labels)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-remove\-reviewer <stringSlice>\fR
+\&Approval reviewer login to remove (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-remove\-tester <stringSlice>\fR
+\&Tester login to remove (repeat for multiple users)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-t, \-\-title <string>\fR
+\&New PR title
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli pr edit owner/repo 123 \-\-title \(dqUpdated title\(dq
+\&  ag\-cli pr edit owner/repo 123 \-\-body \(dqUpdated description\(dq
+\&  ag\-cli pr edit owner/repo 123 \-\-body\-file description.md
+\&  ag\-cli pr edit owner/repo 123 \-\-body\-file \-
+.fi
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

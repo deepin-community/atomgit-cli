@@ -1,0 +1,51 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-AUTH\-LOGIN" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-auth\-login \- Log in with AtomGit OAuth (opens browser, saves token.json)
+.SH SYNOPSIS
+.nf
+\&ag\-cli auth login [flags]
+.fi
+.SH DESCRIPTION
+\&Opens a browser to authorize ag\-cli against atomgit.com, then writes
+\&access_token and user to the XDG config path (see README). With \-\-with\-token,
+\&skips the browser and reads an existing access token (PAT or OAuth token)
+\&from standard input instead — useful in sandboxes, containers, and CI where
+\&no browser is available:
+.PP
+\&    echo \(dq$TOKEN\(dq | ag\-cli auth login \-\-with\-token
+\&    ag\-cli auth login \-\-with\-token < token.txt
+.PP
+\&Piped or redirected input is read to EOF without any prompt; in an
+\&interactive terminal a single hidden prompt is shown. The token is validated
+\&against the AtomGit user API before it is saved. If already logged in, skips
+\&unless \-\-force is set. The first saved account becomes active; later logins
+\&do not change the active account.
+.SH OPTIONS
+.TP
+\fB\-\-force\fR
+\&Always authenticate again even if already logged in
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-git\-email <string>\fR
+\&Override the Git user.email stored for this account
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-git\-name <string>\fR
+\&Override the Git user.name stored for this account
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-with\-token\fR
+\&Read an access token from standard input instead of browser OAuth
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-auth\fR(1)

@@ -1,0 +1,56 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-BROWSE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-browse \- Open repositories, issues, pull requests, and more in the browser
+.SH SYNOPSIS
+.nf
+\&ag\-cli browse [<number> | <path> | <commit\-sha>] [flags]
+.fi
+.SH DESCRIPTION
+\&Open repositories, issues, pull requests, and more in the browser
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-a, \-\-actions\fR
+\&Open repository actions
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-b, \-\-branch <string>\fR
+\&Select another branch by passing in the branch name
+\&Default: \(dq\(dq.
+.TP
+\fB\-c, \-\-commit <string>\fR
+\&Select another commit by passing in the commit SHA, default is the last commit
+\&Default: \(dq\(dq.
+.TP
+\fB\-n, \-\-no\-browser\fR
+\&Print destination URL instead of opening the browser
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-r, \-\-releases\fR
+\&Open repository releases
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-R, \-\-repo <string>\fR
+\&Select another repository using the OWNER/REPO format
+\&Default: \(dq\(dq.
+.TP
+\fB\-s, \-\-settings\fR
+\&Open repository settings
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-w, \-\-wiki\fR
+\&Open repository wiki
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\fR(1)

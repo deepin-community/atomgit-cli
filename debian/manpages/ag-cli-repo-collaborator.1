@@ -1,0 +1,37 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-COLLABORATOR" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-collaborator \- Manage repository collaborators
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo collaborator [flags]
+.fi
+.SH DESCRIPTION
+\&List, inspect, add, edit, and remove direct repository collaborators.
+.PP
+\&The built\-in AtomGit permissions are pull, push, and admin. Organization\-
+\&inherited permissions are displayed but cannot be changed by these commands.
+.PP
+\&AtomGit API v5 exposes accepted collaborators only. Pending invitations are
+\&not shown by list or view; remove attempts to revoke a possible pending
+\&invitation when the user is not an accepted collaborator. In text mode, list
+\&writes this API limitation as a note to stderr; JSON output contains only the
+\&accepted\-collaborator data returned by the API.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1),
+\fBag\-cli\-repo\-collaborator\-add\fR(1),
+\fBag\-cli\-repo\-collaborator\-edit\fR(1),
+\fBag\-cli\-repo\-collaborator\-list\fR(1),
+\fBag\-cli\-repo\-collaborator\-remove\fR(1),
+\fBag\-cli\-repo\-collaborator\-view\fR(1)

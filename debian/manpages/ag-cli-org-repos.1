@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ORG\-REPOS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-org\-repos \- List organization repositories
+.SH SYNOPSIS
+.nf
+\&ag\-cli org repos <org> [flags]
+.fi
+.SH DESCRIPTION
+\&List organization repositories
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output repositories as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of repositories to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli org repos my\-organization
+\&  ag\-cli org repos my\-organization \-\-limit 100
+\&  ag\-cli org repos my\-organization \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-org\fR(1)

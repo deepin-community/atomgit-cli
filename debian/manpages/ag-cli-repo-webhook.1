@@ -1,0 +1,34 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-WEBHOOK" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-webhook \- Manage repository webhooks
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo webhook [flags]
+.fi
+.SH DESCRIPTION
+\&List, inspect, create, edit, delete, and test repository webhooks.
+.PP
+\&Webhook secrets are accepted only from an environment variable, a file, or
+\&standard input. They are never included in command output. The API exposes the
+\&active state as read\-only metadata, so this command does not send an
+\&undocumented active field.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1),
+\fBag\-cli\-repo\-webhook\-create\fR(1),
+\fBag\-cli\-repo\-webhook\-delete\fR(1),
+\fBag\-cli\-repo\-webhook\-edit\fR(1),
+\fBag\-cli\-repo\-webhook\-list\fR(1),
+\fBag\-cli\-repo\-webhook\-test\fR(1),
+\fBag\-cli\-repo\-webhook\-view\fR(1)

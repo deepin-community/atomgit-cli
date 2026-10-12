@@ -1,0 +1,38 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-DOCTOR" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-doctor \- CLI health check: config, auth, and connectivity
+.SH SYNOPSIS
+.nf
+\&ag\-cli doctor [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Check local configuration without modifying it. Use \-\-live for read\-only API probes (30 second overall timeout). Missing optional capabilities are skipped. Failures return a nonzero exit status; warnings alone do not.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output a redacted health report as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-live\fR
+\&Run read\-only connectivity and authentication probes
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli doctor
+\&ag\-cli doctor \-\-live
+\&ag\-cli doctor owner/repo \-\-live \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\fR(1)

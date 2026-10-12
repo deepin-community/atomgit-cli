@@ -1,0 +1,75 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RUN\-LIST" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-run\-list \- List workflow runs
+.SH SYNOPSIS
+.nf
+\&ag\-cli run list [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&List workflow runs
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-actor <string>\fR
+\&Filter by triggering username
+\&Default: \(dq\(dq.
+.TP
+\fB\-b, \-\-branch <string>\fR
+\&Filter by head branch
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-end\-time <int64>\fR
+\&Filter runs ending at or before this Unix timestamp in milliseconds
+\&Default: \(dq0\(dq.
+.TP
+\fB\-\-event <string>\fR
+\&Filter by event: mr, push, manual
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-json\fR
+\&Output workflow runs as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of runs to list
+\&Default: \(dq30\(dq.
+.TP
+\fB\-\-pr <string>\fR
+\&Filter by pull request number
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-start\-time <int64>\fR
+\&Filter runs starting at or after this Unix timestamp in milliseconds
+\&Default: \(dq0\(dq.
+.TP
+\fB\-s, \-\-status <string>\fR
+\&Filter by status: completed, running, failed, canceled, ignored, paused, suspend
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-workflow <string>\fR
+\&Filter by workflow ID
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-workflow\-name <string>\fR
+\&Filter by workflow name
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli run list owner/repo
+\&  ag\-cli run list
+\&  ag\-cli run list owner/repo \-\-branch main \-\-status failed
+\&  ag\-cli run list owner/repo \-\-event push \-\-workflow\-name CI \-\-limit 50
+.fi
+.SH SEE ALSO
+\fBag\-cli\-run\fR(1)

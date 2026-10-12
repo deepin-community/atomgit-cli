@@ -1,0 +1,23 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-MILESTONE\-REOPEN" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-milestone\-reopen \- Reopen a repository milestone
+.SH SYNOPSIS
+.nf
+\&ag\-cli milestone reopen [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&Reopen a repository milestone
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-milestone\fR(1)

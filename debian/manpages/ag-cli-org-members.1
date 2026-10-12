@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ORG\-MEMBERS" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-org\-members \- List organization members
+.SH SYNOPSIS
+.nf
+\&ag\-cli org members <org> [flags]
+.fi
+.SH DESCRIPTION
+\&List organization members
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output members as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of members to list
+\&Default: \(dq30\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli org members my\-organization
+\&  ag\-cli org members my\-organization \-\-limit 100
+\&  ag\-cli org members my\-organization \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-org\fR(1)

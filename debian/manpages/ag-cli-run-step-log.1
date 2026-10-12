@@ -1,0 +1,40 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RUN\-STEP\-LOG" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-run\-step\-log \- Fetch step\-level logs for a workflow job
+.SH SYNOPSIS
+.nf
+\&ag\-cli run step\-log [<owner>/<repo>] <run\-id> <job\-id> <step\-id> [flags]
+.fi
+.SH DESCRIPTION
+\&Retrieve paginated AtomGit Actions step logs and write them as text.
+.PP
+\&Use ag\-cli run view to discover step IDs. \-\-output writes the complete log
+\&atomically and refuses to replace an existing file unless \-\-overwrite is set.
+.SH OPTIONS
+.TP
+\fB\-\-output <string>\fR
+\&Write the complete log to a file instead of stdout
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-overwrite\fR
+\&Replace an existing \-\-output destination
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli run step\-log owner/repo <run\-id> <job\-id> <step\-id>
+\&  ag\-cli run step\-log <run\-id> <job\-id> <step\-id>
+\&  ag\-cli run step\-log owner/repo <run\-id> <job\-id> <step\-id> \-\-output step.log
+\&  ag\-cli run step\-log owner/repo <run\-id> <job\-id> <step\-id> \-\-output step.log \-\-overwrite
+.fi
+.SH SEE ALSO
+\fBag\-cli\-run\fR(1)

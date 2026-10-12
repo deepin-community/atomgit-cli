@@ -1,0 +1,40 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-USER\-NAMESPACES" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-user\-namespaces \- List namespaces for the authenticated user
+.SH SYNOPSIS
+.nf
+\&ag\-cli user namespaces [flags]
+.fi
+.SH DESCRIPTION
+\&List user and group namespaces visible to the authenticated user. The default mode is intrant.
+.SH OPTIONS
+.TP
+\fB\-\-json\fR
+\&Output namespaces as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-L, \-\-limit <int>\fR
+\&Maximum number of namespaces to list
+\&Default: \(dq30\(dq.
+.TP
+\fB\-\-mode <string>\fR
+\&Namespace source: intrant, project, or all
+\&Default: \(dqintrant\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli user namespaces
+\&  ag\-cli user namespaces \-\-mode project \-\-limit 100
+\&  ag\-cli user namespaces \-\-mode all \-\-json
+.fi
+.SH SEE ALSO
+\fBag\-cli\-user\fR(1)

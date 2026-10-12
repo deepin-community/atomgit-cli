@@ -1,0 +1,47 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-create \- Create an issue
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue create [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Create an issue
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-assignee <string>\fR
+\&Assign the issue to a user (login)
+\&Default: \(dq\(dq.
+.TP
+\fB\-b, \-\-body <string>\fR
+\&Issue body
+\&Default: \(dq\(dq.
+.TP
+\fB\-F, \-\-body\-file <string>\fR
+\&Read issue body from file (use \- for stdin)
+\&Default: \(dq\(dq.
+.TP
+\fB\-t, \-\-title <string>\fR
+\&Issue title
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli issue create owner/repo \-\-title \(dqBug report\(dq \-\-body \(dqDescription\(dq
+\&  ag\-cli issue create owner/repo \-\-title \(dqBug report\(dq \-\-assignee alice
+\&  ag\-cli issue create owner/repo \-\-title \(dqBug report\(dq \-\-body\-file description.md
+\&  ag\-cli issue create owner/repo \-\-title \(dqBug report\(dq \-\-body\-file \-
+.fi
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

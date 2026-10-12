@@ -1,0 +1,28 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-COMMIT\-COMMENT\-DELETE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-commit\-comment\-delete \- Delete a commit comment
+.SH SYNOPSIS
+.nf
+\&ag\-cli commit comment delete [<owner>/<repo>] <comment\-id> [flags]
+.fi
+.SH DESCRIPTION
+\&Delete a commit comment you own. Asks for confirmation unless \-\-yes is supplied.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation prompt
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-commit\-comment\fR(1)

@@ -1,0 +1,36 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-LABEL\-CREATE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-label\-create \- Create a repository label
+.SH SYNOPSIS
+.nf
+\&ag\-cli label create [<owner>/<repo>] [flags]
+.fi
+.SH DESCRIPTION
+\&Create a repository label. AtomGit API v5 accepts a name and color for label creation.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-color <string>\fR
+\&Label color in #RGB or #RRGGBB format
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-name <string>\fR
+\&Label name
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli label create owner/repo \-\-name bug \-\-color \(dq#ff0000\(dq
+.fi
+.SH SEE ALSO
+\fBag\-cli\-label\fR(1)

@@ -1,0 +1,58 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RUN\-VIEW" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-run\-view \- View a workflow run, jobs, logs, and artifacts
+.SH SYNOPSIS
+.nf
+\&ag\-cli run view [<owner>/<repo>] <run\-id> [flags]
+.fi
+.SH DESCRIPTION
+\&View a workflow run, jobs, logs, and artifacts
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-artifact <string>\fR
+\&Download a specific artifact as a zip archive
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-artifact\-file <string>\fR
+\&Artifact destination path (defaults to the artifact name)
+\&Default: \(dq\(dq.
+.TP
+\fB\-j, \-\-job <string>\fR
+\&View a specific job
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-log\fR
+\&Write the selected job log text to stdout
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-log\-file <string>\fR
+\&Download the selected job log archive to a file
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-overwrite\fR
+\&Replace an existing download destination
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli run view owner/repo 12345
+\&  ag\-cli run view 12345
+\&  ag\-cli run view owner/repo 12345 \-\-job job\-id
+\&  ag\-cli run view owner/repo 12345 \-\-job job\-id \-\-log
+\&  ag\-cli run view owner/repo 12345 \-\-job job\-id \-\-log\-file job\-logs.zip
+\&  ag\-cli run view owner/repo 12345 \-\-artifact artifact\-id
+\&  ag\-cli run view owner/repo 12345 \-\-artifact artifact\-id \-\-artifact\-file build.zip \-\-overwrite
+.fi
+.SH SEE ALSO
+\fBag\-cli\-run\fR(1)

@@ -1,0 +1,23 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-AUTH\-SETUP\-GIT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-auth\-setup\-git \- Configure Git to use ag\-cli as a credential helper
+.SH SYNOPSIS
+.nf
+\&ag\-cli auth setup\-git [flags]
+.fi
+.SH DESCRIPTION
+\&Configure Git to use AtomGit CLI as the HTTPS credential helper for
+\&atomgit.com. Git requests credentials from the active account selected by
+\&ag\-cli auth switch; access tokens are not written to Git configuration.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-auth\fR(1)

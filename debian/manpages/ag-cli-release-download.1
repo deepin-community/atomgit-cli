@@ -1,0 +1,48 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RELEASE\-DOWNLOAD" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-release\-download \- Download an attachment from a release
+.SH SYNOPSIS
+.nf
+\&ag\-cli release download [<owner>/<repo>] <tag> <asset> [flags]
+.fi
+.SH DESCRIPTION
+\&Download a release attachment identified by its exact asset name to a local file.
+.PP
+\&The required \-o/\-\-output flag names the local destination path. When the
+\&destination already exists the command fails unless \-\-overwrite is given, in
+\&which case the existing file is replaced. The attachment is streamed to a
+\&temporary file in the destination directory and only installed at the target
+\&path after the transfer completes; a transfer interruption leaves any existing
+\&destination untouched.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-o, \-\-output <string>\fR
+\&Local file path to write the attachment to (required)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-overwrite\fR
+\&Replace an existing local file at \-\-output
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-timeout <duration>\fR
+\&Maximum attachment transfer time (0 disables the limit)
+\&Default: \(dq30m0s\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli release download owner/repo v1.0.0 app.tar.gz \-o ./dist/app.tar.gz
+\&  ag\-cli release download owner/repo v1.0.0 app.tar.gz \-\-output ./existing.tar.gz \-\-overwrite
+.fi
+.SH SEE ALSO
+\fBag\-cli\-release\fR(1)

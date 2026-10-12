@@ -1,0 +1,34 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ALIAS\-SET" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-alias\-set \- Create a shortcut for an ag\-cli command
+.SH SYNOPSIS
+.nf
+\&ag\-cli alias set <alias> <expansion>... [flags]
+.fi
+.SH DESCRIPTION
+\&Create a shortcut for an ag\-cli command.
+.PP
+\&Aliases are expanded at invocation time: the first non\-flag argument of an ag\-cli
+\&invocation is looked up and replaced with the expansion. Aliases never
+\&override built\-in commands, so names that conflict with a built\-in command
+\&are rejected, and the expansion must start with a known built\-in command.
+.PP
+\&To include a literal space inside an expansion argument (for example a
+\&Windows path), escape it with a backslash: C:\eProgram\e Files.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli alias set pl \(dqpr list\(dq
+\&  ag\-cli alias set rv repo view
+.fi
+.SH SEE ALSO
+\fBag\-cli\-alias\fR(1)

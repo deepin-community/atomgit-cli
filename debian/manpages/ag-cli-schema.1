@@ -1,0 +1,30 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-SCHEMA" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-schema \- Describe public commands as versioned JSON
+.SH SYNOPSIS
+.nf
+\&ag\-cli schema [<command> ...] [flags]
+.fi
+.SH DESCRIPTION
+\&List public commands or describe an exact command path without executing it. Paths may include the ag\-cli prefix; use 'ag\-cli schema ag\-cli' for root command details. Uses static command metadata only; no login or network is required. This is a versioned command description format, not JSON Schema. Undescribed behavior must not be inferred.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli schema
+\&  ag\-cli schema ag\-cli
+\&  ag\-cli schema pr create
+\&  ag\-cli schema ag\-cli pr create
+\&  ag\-cli schema api
+\&  ag\-cli schema pr comment create
+.fi
+.SH SEE ALSO
+\fBag\-cli\fR(1)

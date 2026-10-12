@@ -1,0 +1,53 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-REPO\-TRANSFER" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-repo\-transfer \- Transfer a repository to an organization
+.SH SYNOPSIS
+.nf
+\&ag\-cli repo transfer [<owner>/<repo>] \-\-to <organization> [flags]
+.fi
+.SH DESCRIPTION
+\&Transfer a repository to an AtomGit organization.
+.PP
+\&Repository transfer can change access, URLs, and automation. The command shows
+\&the source and resolved destination organization and requires confirmation
+\&unless \-\-yes is supplied. The currently documented AtomGit transfer APIs only
+\&describe organization destinations, so personal\-user destinations are rejected.
+\&After the transfer, the authoritative repository name and URL are read back from
+\&AtomGit. Local Git remotes are never modified.
+.PP
+\&AtomGit requires the account password when the source repository is owned by
+\&an organization. It is read without echo from an interactive terminal, or from
+\&standard input when \-\-password\-stdin is combined with \-\-yes.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-password\-stdin\fR
+\&Read the organization\-transfer password from standard input (requires \-\-yes)
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-to <string>\fR
+\&Destination organization namespace (required)
+\&Default: \(dq\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip the confirmation prompt
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli repo transfer owner/repo \-\-to target\-organization
+\&  ag\-cli repo transfer owner/repo \-\-to target\-organization \-\-yes
+\&  printf '%s\en' \(dq$PASSWORD\(dq | ag\-cli repo transfer source\-organization/repo \-\-to target\-organization \-\-yes \-\-password\-stdin
+.fi
+.SH SEE ALSO
+\fBag\-cli\-repo\fR(1)

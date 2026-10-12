@@ -1,0 +1,32 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-AUTH\-LOGOUT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-auth\-logout \- Remove the active or a selected stored account
+.SH SYNOPSIS
+.nf
+\&ag\-cli auth logout [flags]
+.fi
+.SH DESCRIPTION
+\&Remove the active account or one selected with \-\-account.
+\&An active account can only be removed when it is the last saved account;
+\&otherwise switch to another account first. Use \-\-all to remove every account.
+.SH OPTIONS
+.TP
+\fB\-\-account <string>\fR
+\&Account username to remove
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-all\fR
+\&Remove all saved accounts
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH SEE ALSO
+\fBag\-cli\-auth\fR(1)

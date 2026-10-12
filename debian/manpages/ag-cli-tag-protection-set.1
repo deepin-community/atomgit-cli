@@ -1,0 +1,46 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-TAG\-PROTECTION\-SET" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-tag\-protection\-set \- Create or update a protected tag rule
+.SH SYNOPSIS
+.nf
+\&ag\-cli tag protection set [<owner>/<repo>] <tag\-or\-pattern> [flags]
+.fi
+.SH DESCRIPTION
+\&Create or update a protected tag rule.
+.PP
+\&\-\-create\-access accepts none, developer, or maintainer. These map to AtomGit
+\&create_access_level values 0, 30, and 40: nobody; Developer/Maintainer/Admin;
+\&and Maintainer/Admin. Omitting the flag on create uses the server default
+\&(maintainer). Existing rules keep the current access level when the flag is
+\&omitted. Updating an existing rule requires confirmation unless \-\-yes is
+\&supplied.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-create\-access <string>\fR
+\&Create access: none, developer, or maintainer
+\&Default: \(dq\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation when updating an existing rule
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli tag protection set owner/repo v1.0.0 \-\-create\-access maintainer
+\&  ag\-cli tag protection set owner/repo \(dqv*\(dq \-\-create\-access developer
+\&  ag\-cli tag protection set owner/repo v1.0.0
+\&  ag\-cli tag protection set owner/repo v1.0.0 \-\-create\-access none \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-tag\-protection\fR(1)

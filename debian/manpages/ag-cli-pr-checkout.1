@@ -1,0 +1,66 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-PR\-CHECKOUT" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-pr\-checkout \- Check out a pull request locally
+.SH SYNOPSIS
+.nf
+\&ag\-cli pr checkout [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&Check out the source branch of a pull request into a local branch.
+.PP
+\&When run inside a git repository, the owner and repository are inferred from
+\&the current git remote. You can also specify them explicitly.
+.PP
+\&For same\-repository PRs, the source branch is fetched from the matching remote.
+\&For fork PRs, a temporary remote is added to fetch the source branch.
+.PP
+\&By default, the command will not overwrite uncommitted changes or existing local
+\&branches. Use \-\-force to override these safety checks.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-b, \-\-branch <string>\fR
+\&Local branch name (default: PR head branch name)
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-detach\fR
+\&Check out PR in detached HEAD mode
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-force\fR
+\&Force checkout, bypassing safety checks for dirty tree and branch conflicts
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-recurse\-submodules\fR
+\&Update submodules after checkout
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&# Check out PR #42, inferring the repository from git remote
+\&  ag\-cli pr checkout 42
+.PP
+\&  # Check out PR #42 from a specific repository
+\&  ag\-cli pr checkout owner/repo 42
+.PP
+\&  # Check out to a custom branch name
+\&  ag\-cli pr checkout 42 \-\-branch review\-fix
+.PP
+\&  # Force checkout, discarding safety checks
+\&  ag\-cli pr checkout 42 \-\-force
+.PP
+\&  # Check out in detached HEAD mode and update submodules
+\&  ag\-cli pr checkout 42 \-\-detach \-\-recurse\-submodules
+.fi
+.SH SEE ALSO
+\fBag\-cli\-pr\fR(1)

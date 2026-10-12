@@ -1,0 +1,41 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-LABEL" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-label \- Add or remove labels on an issue
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue label [<owner>/<repo>] <number> [<labels>] [flags]
+.fi
+.SH DESCRIPTION
+\&Add or remove labels on an issue.
+.PP
+\&Labels are comma\-separated. Positional labels are treated as labels to add for
+\&backward compatibility. Use \-\-add or \-\-remove to make the operation explicit.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-add <string>\fR
+\&Comma\-separated labels to add
+\&Default: \(dq\(dq.
+.TP
+\fB\-\-remove <string>\fR
+\&Comma\-separated labels to remove
+\&Default: \(dq\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli issue label owner/repo 42 \(dqbug, help wanted\(dq
+\&  ag\-cli issue label owner/repo 42 \-\-add \(dqbug, help wanted\(dq
+\&  ag\-cli issue label owner/repo 42 \-\-remove \(dqpriority/high\(dq
+.fi
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

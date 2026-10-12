@@ -1,0 +1,53 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-ISSUE\-BRANCHES" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-issue\-branches \- List or update related branches for an issue
+.SH SYNOPSIS
+.nf
+\&ag\-cli issue branches [<owner>/<repo>] <number> [flags]
+.fi
+.SH DESCRIPTION
+\&List or update related branches for an issue.
+.PP
+\&With neither \-\-add nor \-\-remove, the command lists current related branch names.
+.PP
+\&Concurrent branch\-name updates from other clients can be overwritten by this
+\&command because the AtomGit API uses whole\-list replacement. Review the current
+\&list before mutating branches that other tools may also manage.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH OPTIONS
+.TP
+\fB\-\-add <stringArray>\fR
+\&Branch names to add (repeatable)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-\-json\fR
+\&Output branch names as JSON
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-remove <stringArray>\fR
+\&Branch names to remove (repeatable)
+\&Default: \(dq[]\(dq.
+.TP
+\fB\-y, \-\-yes\fR
+\&Skip confirmation prompt
+\&Default: \(dqfalse\(dq.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli issue branches owner/repo 42
+\&  ag\-cli issue branches owner/repo 42 \-\-json
+\&  ag\-cli issue branches owner/repo 42 \-\-add feature/x
+\&  ag\-cli issue branches owner/repo 42 \-\-remove main \-\-yes
+.fi
+.SH SEE ALSO
+\fBag\-cli\-issue\fR(1)

@@ -1,0 +1,39 @@
+.\" Generated from Cobra metadata; do not edit.
+.TH "AG\-CLI\-RELEASE" "1" "2026\-10\-09" "AtomGit CLI 0.7.4" "AtomGit CLI Manual"
+.SH NAME
+\&ag\-cli\-release \- Manage repository releases
+.SH SYNOPSIS
+.nf
+\&ag\-cli release [flags]
+.fi
+.SH DESCRIPTION
+\&List, view, create, and edit repository releases on AtomGit, and upload or download release attachments.
+.PP
+\&The repository's automated release pipeline validates tags and artifacts, then
+\&uses these primitives through \(dqmake publish VERSION=vX.Y.Z NOTES_FILE=notes.md\(dq.
+.PP
+\&When OWNER/REPO is omitted, the repository is inferred from the current Git repository. An explicit OWNER/REPO argument always takes precedence. Remote selection prefers remote.pushDefault, the current branch upstream, origin, then a unique AtomGit/GitCode remote.
+.SH INHERITED OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+\&Show help for command
+\&Default: \(dqfalse\(dq.
+.TP
+\fB\-\-raw\-output\fR
+\&Disable terminal output sanitization for machine processing
+\&Default: \(dqfalse\(dq.
+.SH EXAMPLES
+.nf
+\&ag\-cli release list owner/repo
+\&  ag\-cli release view owner/repo v1.0.0
+\&  ag\-cli release create owner/repo v1.0.0 \-\-name \(dqVersion 1.0.0\(dq \-\-body \(dqRelease notes\(dq
+\&  ag\-cli release upload owner/repo v1.0.0 ./dist/app.tar.gz
+.fi
+.SH SEE ALSO
+\fBag\-cli\fR(1),
+\fBag\-cli\-release\-create\fR(1),
+\fBag\-cli\-release\-download\fR(1),
+\fBag\-cli\-release\-edit\fR(1),
+\fBag\-cli\-release\-list\fR(1),
+\fBag\-cli\-release\-upload\fR(1),
+\fBag\-cli\-release\-view\fR(1)
